@@ -17,18 +17,6 @@
 
 </head>
     <body>
-  @auth
  
-    
-
-      @else
-      
-    <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-    <a href="{{ route('register') }}" class="font-medium text-blue-600 hover:underline dark:text-blue-500">Sign up</a>
-        <a href="{{ route('login.create') }}" class=" font-medium text-blue-600 hover:underline dark:text-blue-500">Login</a>
-      </div>
-    </div>
-    @endauth
-    </section>
     </body>
 </html>
