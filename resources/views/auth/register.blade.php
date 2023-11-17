@@ -21,25 +21,51 @@
 <section class="bg-gray-50 dark:bg-gray-900">
   <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
      
-      <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
-          <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+      <div class="w-full bg-white rounded-lg shadow dark:border sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+          <div class="p-6 space-y-4 sm:p-8">
               <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                  Register Your Account
               </h1>
  
 
-   <form method="Post" class="space-y-4 md:space-y-6" action="{{ route('register.user')}}">
+   <form method="Post" class="" action="{{ route('register.user')}}">
               
 @csrf
-  <div class="mb-6">
+<div class="grid md:grid-cols-2 md:gap-6">
+<div class="mb-2">
+  <label for="fNmae" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">First Name</label>
+<input type="text" name="fName" id="fName" value="{{old('fName')}}" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="John" required>
+</div>
+<div class="mb-2">
+  <label for="lNmae" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Last Name</label>
+<input type="text" name="lName" id="lName" value="{{old('lName')}}" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="Doe">
+</div>
+</div>
+
+  <div class="mb-2">
     <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
     <input type="email" id="email" value="{{old('email')}}" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="abc@123.com" required>
   </div>
-  <div class="mb-6">
+<div class="mb-2">
+    <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="floating_phone" id="floating_phone" class="block w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 focus:outline-none focus:ring-0 " placeholder=" "/>
+        <label for="floating_phone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Phone number (123-456-7890)</label>
+  
+  </div>
+  <div class="grid md:grid-cols-2 md:gap-6">
+<div class="mb-2">
+  <label for="ComapnyName" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Company Name</label>
+<input type="text" name="comapyName" id="comapnyName" value="{{old('comapnyName')}}" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="John" required>
+</div>
+<div class="mb-2">
+  <label for="comapnyDomain" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Company Domain</label>
+<input type="text" name="companyDomain" id="comapnyName" value="{{old('comapnyName')}}" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="Doe" required>
+</div>
+</div>
+  <div class="mb-2">
     <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your password</label>
     <input type="password" id="password" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required>
   </div>
-  <div class="mb-6">
+  <div class="mb-2">
     <label for="password_confirmation" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Repeat password</label>
     <input type="password" name="password_confirmation" id="password_confirmation" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required>
   </div>
